@@ -22,6 +22,9 @@ async function geoInfo() {
   ipLocation.textContent=`${ipInfo.location.city}, ${ipInfo.location.region} `
   timeZone.textContent=ipInfo.location.timezone
   isp.textContent=ipInfo.isp
+
+  map.setView([ipInfo.location.lat,ipInfo.location.lng], 13)
+        L.marker([ipInfo.location.lat,ipInfo.location.lng]).addTo(map)
 }
 geoInfo()
 
