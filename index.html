@@ -17,7 +17,7 @@
     <header>
         <h1>IP Address Tracker</h1>
 
-        <form>
+        <form id="ip-form">
             <label for="ip-search">IP-Address or Domain</label>
             <input id="ip-search" type="text" name="ip-search" placeholder="Search for any IP address or domain" required>
             <button type="submit">Search</button>
@@ -25,28 +25,28 @@
     </header>
 
     <main>
-        <div id="map" ></div>
+        <div id="ip-map" ></div>
         <div id="result-section">
                 
                     <dl aria-live="polite" aria-atomic="true">
                         <div class="ip-info">
                         <dt>IP ADDRESS</dt>
-                        <dd id="ip-address-value" ></dd>
+                        <dd id="addressValue" ></dd>
                         </div>
 
                         <div class="ip-info">
                         <dt>LOCATION</dt>
-                        <dd id="location-value" ></dd>
+                        <dd id="locationValue" ></dd>
                         </div>
 
                         <div class="ip-info">
                         <dt>TIMEZONE</dt>
-                        <dd id="timezone-value" ></dd>
+                        <dd id="timezoneValue" ></dd>
                         </div>
 
                         <div class="ip-info">
                         <dt>ISP</dt>
-                        <dd id="isp-value"></dd>
+                        <dd id="ispValue"></dd>
                         </div>
                     </dl>
                     
