@@ -26,6 +26,23 @@ async function geoInfo() {
   map.setView([ipInfo.location.lat,ipInfo.location.lng], 13)
         L.marker([ipInfo.location.lat,ipInfo.location.lng]).addTo(map)
 }
+
+// geoInfo()
+
+ form.addEventListener('submit', (e)=>{
+    e.preventDefault()
+   geoInfo(searchInfo.value)
+ })
+async function geoInfo(searchTerm) {
+    const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_jrJQ4LyjAAGmCDslMnce48j5TxH0K&ipAddress=${searchTerm}`);
+    const ipInfo = await response.json();
+     console.log(ipInfo);
+    address.textContent =ipInfo.ip
+    ipLocation.textContent=`${ipInfo.location.city}, ${ipInfo.location.region} `
+    timeZone.textContent=ipInfo.location.timezone
+    isp.textContent=ipInfo.isp
+
+    map.setView([ipInfo.location.lat,ipInfo.location.lng], 13)
+        L.marker([ipInfo.location.lat,ipInfo.location.lng]).addTo(map)
+}
 geoInfo()
-
-
