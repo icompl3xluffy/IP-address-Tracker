@@ -1,6 +1,6 @@
 header{
     background-image: url(projectInfo/preview\ \(1\).jpg);
-    height:200px;
+    height:250px;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -14,11 +14,11 @@ h1{
 }
 
 #ip-map{
-    height:100vh;
+    height:70vh;
 }
 form{
     display: flex;
-    /* flex-direction: column; */
+    
 }
 label{
     display: none;
@@ -27,12 +27,11 @@ input{
     border: 1px solid black;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    /* border-radius: 10px; */
     width:300px;
     padding:10px;
     font-size: 15px;
     margin-right: 0;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 button{
     background-color: black;
@@ -40,8 +39,79 @@ button{
     border-bottom-right-radius: 10px;
     border: 1px solid black;
     margin-left: 0;
-     margin-bottom: 20px;
+    margin-bottom: 40px;
     padding-left:0;
     color:white;
     width:30px;
+}
+main {
+  position: relative;
+}
+#result-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1001;
+  width: calc(100% - 3rem);
+  max-width: 69rem;
+  margin-inline: auto;
+  padding: 1.5rem;
+  background: white;
+  opacity: 90%;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+}
+
+dl {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+  text-align: center;
+}
+
+dt {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  
+}
+
+dd {
+  margin: 0.25rem 0 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--very-dark-gray);
+}
+
+@media (min-width: 600px) {
+  dl {
+    flex-direction: row;
+    gap: 0;
+    text-align: left;
+  }
+
+  .ip-info {
+    flex: 1;
+    padding-inline: 2rem;
+  }
+
+  .ip-info:first-child {
+    padding-left: 0;
+  }
+
+  .ip-info + .ip-info {
+    border-left: 1px solid hsl(0, 0%, 85%);
+  }
+
+  dt {
+    font-size: 0.75rem;
+  }
+
+  dd {
+    font-size: 1.625rem;
+  }
+  
 }
