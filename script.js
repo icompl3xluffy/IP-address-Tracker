@@ -23,10 +23,9 @@ if (searchTerm){
 }
     const response = await fetch(url)
     const ipInfo = await response.json();
-     console.log(ipInfo);
     address.textContent =ipInfo.ip
     ipLocation.textContent=`${ipInfo.location.city}, ${ipInfo.location.region} `
-    timeZone.textContent=ipInfo.location.timezone
+    timeZone.textContent=`UTC ${ipInfo.location.timezone}`
     isp.textContent=ipInfo.isp
 
     map.setView([ipInfo.location.lat,ipInfo.location.lng], 13)
